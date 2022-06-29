@@ -1,0 +1,42 @@
+
+#DATABASE USED - MySQL
+#DATABASE NAME - group2
+
+#Database create
+create database group2;
+use group2;
+
+
+#Creating Tables
+
+1) tbl_admin
+
+create table tbl_admin(admin_email varchar(255) NOT NULL AUTO_INCREMENT,admin_name varchar(255),admin_password varchar(255),primary key(admin_email));
+
+2) tbl_complaints
+
+create table tbl_complaints(ticket_id int(11) NOT NULL AUTO_INCREMENT, complaint varchar(255),customer_email varchar(255),pincode varchar(255),status varchar(255),primary key(ticket_id));
+
+3) tbl_customer
+
+create table tbl_customer(customer_email varchar(255) NOT NULL AUTO_INCREMENT,customer_address varchar(255),customer_mobile varchar(255),customer_name varchar(255),
+customer_password varchar(255) ,customer_pincode varchar(255),primary key(customer_email));
+
+4) tbl_engineer
+ 
+create table tbl_engineer(engineer_email varchar(255) NOT NULL AUTO_INCREMENT,engineer_name varchar(255),engineer_password varchar(255),primary key(engineer_email));
+
+5) tbl_engineer_duty
+ 
+create table tbl_engineer_duty(engineer_duty_id int(11) NOT NULL AUTO_INCREMENT,customer_email varchar(255),engineer_emailvarchar(255),ticket_id int(11),
+primary key(engineer_duty_id),foreign key(ticket_id));
+
+6) tbl_feedbacks
+
+create table tbl_feedbacks(feedback_id int(11) NOT NULL AUTO_INCREMENT,customer_email varchar(255),feedback varchar(255),ticket_id int(11),primary key(feedback_id),
+foreign key(ticket_id));
+
+7) tbl_manager
+
+create table tbl_manager(manager_email varchar(255) NOT NULL AUTO_INCREMENT,manager_name varchar(255),manager_password varchar(255), manager_pincode varchar(255),
+primary key(manager_email));
